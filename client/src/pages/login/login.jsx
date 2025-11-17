@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { AuthContext } from "../../components/auth-context";
+// import { AuthContext } from "../../components/auth-context";
 
 import styles from "./login.module.css";
 
@@ -7,13 +7,13 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginDate = { email, password };
+  // const loginDate = { email, password };
 
-  const { HandleLogin } = useContext(AuthContext);
+  // const { HandleLogin } = useContext(AuthContext);
 
   const handleSendValidation = async (e) => {
     e.preventDefault();
-    HandleLogin(loginDate);
+    // HandleLogin(loginDate);
     setEmail("");
     setPassword("");
   };

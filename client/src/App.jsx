@@ -1,4 +1,7 @@
-import { Layout } from "src";
+import { Layout } from "./components/layout/layout";
+import { Request } from "./pages/request/request";
+import { Login } from "./pages/login/login";
+import { Requests } from "./pages/requests/requests-list";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -10,7 +13,7 @@ export const App = () => {
       path: "/",
       element: <Layout />,
       children: [
-        { index: "/", element: <Request /> },
+        { index: true, element: <Request /> },
         { path: "login", element: <Login /> },
         { path: "requests", element: <Requests /> },
       ],

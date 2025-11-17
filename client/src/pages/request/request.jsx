@@ -1,5 +1,5 @@
 import { useState } from "react";
-import InputMask from "react-input-mask";
+// import InputMask from "react-input-mask";
 
 import styles from "./request.module.css";
 
@@ -14,9 +14,9 @@ export const Request = () => {
 
     setIsSending(true);
 
-    const date = new Date().toISOString().slice(0, 10);
-    const time = new Date().toISOString().slice(11, 16);
-    const requestData = { date, time, name, phone, description };
+    // const date = new Date().toISOString().slice(0, 10);
+    // const time = new Date().toISOString().slice(11, 16);
+    const requestData = { name, phone, description };
 
     try {
       const response = await fetch("http://localhost:3000/request", {
