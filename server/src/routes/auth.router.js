@@ -4,6 +4,7 @@ import { auth } from "../middlewares/auth.js";
 export const authRouter = Router();
 
 authRouter.get("/me", auth, async (req, res) => {
-  // req.user — это результат jwt.verify
-  res.json({ authorized: false });
+  const user = req.user;
+
+  res.json({ success: true, message: "User is here!", user: user.email });
 });

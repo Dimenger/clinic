@@ -16,8 +16,9 @@ export const loginUser = async (email, password) => {
       throw new Error("Wrong password!");
     }
     console.log(chalk.green("User login!"));
-    return jwt.sign({ email }, process.env.SECRET, { expiresIn: "5d" });
+    const token = jwt.sign({ email }, process.env.SECRET, { expiresIn: "5d" });
+    return { token, user };
   } catch (error) {
-    throw error; /* выкинет ошибку наружу*/
+    throw error;
   }
 };

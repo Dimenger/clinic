@@ -1,7 +1,8 @@
 import { Layout } from "./components/layout/layout";
 import { Request } from "./pages/request/request";
 import { Login } from "./pages/login/login";
-import { Requests } from "./pages/requests/requests-list";
+import { Requests } from "./pages/requests/requests";
+import { PrivateRoute } from "./components/privat-route/privat-route";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -15,7 +16,14 @@ export const App = () => {
       children: [
         { index: true, element: <Request /> },
         { path: "login", element: <Login /> },
-        { path: "requests", element: <Requests /> },
+        {
+          path: "requests",
+          element: (
+            <PrivateRoute>
+              <Requests />
+            </PrivateRoute>
+          ),
+        },
       ],
     },
   ]);

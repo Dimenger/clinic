@@ -1,15 +1,20 @@
+.requestContainer{
+  display: flex;
+  flex-direction: column;
+  background-color: #068085;
+}
+
 .tableContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 95vh;
-  background-color: #f0f2f5; 
-  padding: 20px;
+  min-height: 80vh;
+  padding: 40px;
 }
 
 .table {
   border-collapse: collapse;
-  background: #fff;
+  background: #9ba7b8;
   box-shadow: 0 2px 16px rgba(0,0,0,0.05);
   min-width: 700px;
   width: auto;
@@ -21,7 +26,7 @@
   font-size: 24px;
   font-weight: bold;
   padding: 10px;
-  background-color: #f8f9fa;
+  background-color: #022355;
 }
 
 thead {
@@ -36,11 +41,11 @@ th, td {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f2f2f2; 
+  background-color: #9c82aa; 
 }
 
 tbody tr:hover {
-  background-color: #e9f5ff; 
+  background-color: #456077; 
 }
 
 .loaderContainer {

@@ -1,17 +1,27 @@
-import chalk from "chalk";
-
 import { Request } from "../models/Request.js";
+import { requestMaper } from "../maper/request.maper.js";
 
 export const getRequests = async () => {
-  const requests = await Request.find();
-  return requests;
+  try {
+    const req = await Request.find();
+    if (!req) {
+      throw new Error("The list is empty!");
+    }
+    const mapedReq = req.map(requestMaper);
+    return mapedReq;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const addRequest = async (data) => {
-  await Request.create({
-    name: data.name,
-    phone: data.phone,
-    description: data.description,
-  });
-  console.log(chalk.bgGreen("Request was added!"));
+  try {
+    await Request.create({
+      name: data.name,
+      phone: data.phone,
+      description: data.description,
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
